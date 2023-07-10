@@ -1,6 +1,6 @@
 import Plugin from '../../lib/plugin/Plugin.js';
 
-class pluginstarterkit extends Plugin {
+class MyPlugin extends Plugin {
   init() {
     this.log.info(`${this.namespace}:${this.getContext('name')}:init`);
   }
@@ -36,4 +36,4 @@ class pluginstarterkit extends Plugin {
   }
 }
 
-export default pluginstarterkit;
+export default MyPlugin;
