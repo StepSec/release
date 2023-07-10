@@ -63,7 +63,7 @@ The `fetch-depth: 0` option is only necessary when the Git history is required e
 [@release-git/conventional-changelog][8].
 
 If you enjoy watching a video, [David from Kodaps][9] created a great walk-through including setting up npm and GitHub
-tokens: [How to use GitHub Actions & Release-It to Easily Release Your Code][10]
+tokens: [How to use GitHub Actions & Release-Git to Easily Release Your Code][10]
 
 ## npm
 

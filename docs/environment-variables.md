@@ -53,7 +53,7 @@ Not used often, but this script asks for the token everytime a `npm run release`
 - Do not check the `.env` file into the Git repository (add it to `.gitignore`). A convention is to use a `.env.example`
   file with dummy values and add this to the repository.
 - Do not put the actual token in the release-git configuration. It will be read from the `GITHUB_TOKEN` environment
-  variable. To use something different, use e.g. `github.tokenRef="RELEASE_IT_GITHUB_TOKEN"` (or `gitlab.tokenRef`).
+  variable. To use something different, use e.g. `github.tokenRef="RELEASE_GIT_GITHUB_TOKEN"` (or `gitlab.tokenRef`).
 
 All of the above is the same for `GITLAB_TOKEN`.
 

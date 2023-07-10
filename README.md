@@ -82,7 +82,7 @@ Per-project installation as shown above is recommended, but global installs are 
 
 Here's a list of interesting external resources:
 
-- Video: [How to use GitHub Actions & Release-It to Easily Release Your Code][18]
+- Video: [How to use GitHub Actions & Release-Git to Easily Release Your Code][18]
 - Article: [Monorepo Semantic Releases][19] ([repo][20])
 
 Want to add yours to the list? Just open a pull request!
