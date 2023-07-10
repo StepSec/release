@@ -175,8 +175,7 @@ test.serial('should instantiate plugins and execute all release-cycle methods fo
 test.serial('should disable core plugins', async t => {
   const { dir } = t.context;
   sh.ShellString(JSON.stringify({ name: 'project', version: '1.0.0' })).toEnd(join(dir, 'package.json'));
-  const content =
-    "import { Plugin } from 'release'; " + ReplacePlugin.toString() + '; export default ReplacePlugin;';
+  const content = "import { Plugin } from 'release'; " + ReplacePlugin.toString() + '; export default ReplacePlugin;';
   sh.ShellString(content).toEnd(join(dir, 'replace-plugin.mjs'));
   sh.exec(`npm link release`);
 
@@ -202,8 +201,7 @@ test.serial('should expose context to execute commands', async t => {
   sh.ShellString(JSON.stringify({ name: 'pkg-name', version: '1.0.0', type: 'module' })).toEnd(
     join(dir, 'package.json')
   );
-  const content =
-    "import { Plugin } from 'release'; " + ContextPlugin.toString() + '; export default ContextPlugin;';
+  const content = "import { Plugin } from 'release'; " + ContextPlugin.toString() + '; export default ContextPlugin;';
   sh.ShellString(content).toEnd(join(dir, 'context-plugin.js'));
   sh.exec(`npm link release`);
 
