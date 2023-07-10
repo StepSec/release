@@ -494,7 +494,7 @@ test.serial('should use custom changelog command with context', async t => {
   test.serial('should run all hooks', async t => {
     gitAdd(`{"name":"hooked","version":"1.0.0","type":"module"}`, 'package.json', 'Add package.json');
     sh.exec(`npm install ${rootDir}`);
-    const plugin = "import { Plugin } from 'release'; class MyPlugin extends Plugin {}; export default MyPlugin;";
+    const plugin = "import { Plugin } from 'release-git'; class MyPlugin extends Plugin {}; export default MyPlugin;";
     sh.ShellString(plugin).toEnd('my-plugin.js');
 
     const hooks = {};

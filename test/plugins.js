@@ -60,8 +60,8 @@ test.serial('should instantiate plugins and execute all release-cycle methods', 
   sh.ShellString(JSON.stringify({ name: 'my-plugin', version: '1.0.0', type: 'module' })).toEnd(
     join(pluginDir, 'package.json')
   );
-  sh.exec(`npm link release`);
-  const content = "import { Plugin } from 'release'; " + MyPlugin.toString() + '; export default MyPlugin;';
+  sh.exec(`npm link release-git`);
+  const content = "import { Plugin } from 'release-git'; " + MyPlugin.toString() + '; export default MyPlugin;';
   sh.ShellString(content).toEnd(join(pluginDir, 'index.js'));
 
   sh.pushd('-q', dir);
@@ -74,7 +74,7 @@ test.serial('should instantiate plugins and execute all release-cycle methods', 
     join(dir, 'package.json')
   );
   sh.exec(`npm install ${pluginDir}`);
-  sh.exec(`npm link release`);
+  sh.exec(`npm link release-git`);
 
   const config = {
     plugins: {
@@ -129,8 +129,8 @@ test.serial('should instantiate plugins and execute all release-cycle methods fo
   sh.ShellString(JSON.stringify({ name: '@scoped/my-plugin', version: '1.0.0', type: 'module' })).toEnd(
     join(pluginDir, 'package.json')
   );
-  sh.exec(`npm link release`);
-  const content = "import { Plugin } from 'release'; " + MyPlugin.toString() + '; export default MyPlugin;';
+  sh.exec(`npm link release-git`);
+  const content = "import { Plugin } from 'release-git'; " + MyPlugin.toString() + '; export default MyPlugin;';
   sh.ShellString(content).toEnd(join(pluginDir, 'index.js'));
 
   sh.pushd('-q', dir);
@@ -138,7 +138,7 @@ test.serial('should instantiate plugins and execute all release-cycle methods fo
     join(dir, 'package.json')
   );
   sh.exec(`npm install ${pluginDir}`);
-  sh.exec(`npm link release`);
+  sh.exec(`npm link release-git`);
 
   const config = {
     plugins: {
@@ -175,9 +175,10 @@ test.serial('should instantiate plugins and execute all release-cycle methods fo
 test.serial('should disable core plugins', async t => {
   const { dir } = t.context;
   sh.ShellString(JSON.stringify({ name: 'project', version: '1.0.0' })).toEnd(join(dir, 'package.json'));
-  const content = "import { Plugin } from 'release'; " + ReplacePlugin.toString() + '; export default ReplacePlugin;';
+  const content =
+    "import { Plugin } from 'release-git'; " + ReplacePlugin.toString() + '; export default ReplacePlugin;';
   sh.ShellString(content).toEnd(join(dir, 'replace-plugin.mjs'));
-  sh.exec(`npm link release`);
+  sh.exec(`npm link release-git`);
 
   const config = {
     plugins: {
@@ -201,9 +202,10 @@ test.serial('should expose context to execute commands', async t => {
   sh.ShellString(JSON.stringify({ name: 'pkg-name', version: '1.0.0', type: 'module' })).toEnd(
     join(dir, 'package.json')
   );
-  const content = "import { Plugin } from 'release'; " + ContextPlugin.toString() + '; export default ContextPlugin;';
+  const content =
+    "import { Plugin } from 'release-git'; " + ContextPlugin.toString() + '; export default ContextPlugin;';
   sh.ShellString(content).toEnd(join(dir, 'context-plugin.js'));
-  sh.exec(`npm link release`);
+  sh.exec(`npm link release-git`);
 
   const repo = parseGitUrl('https://github.com/user/pkg');
 

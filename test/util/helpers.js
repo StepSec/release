@@ -4,7 +4,7 @@ import path from 'node:path';
 import sh from 'shelljs';
 
 const mkTmpDir = () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'release'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'release-git-'));
   return dir;
 };
 

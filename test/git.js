@@ -80,9 +80,9 @@ test.serial('should return the remote url', async t => {
     t.is(await gitClient.getRemoteUrl(), 'bar');
   }
   {
-    const options = { git: { pushRepo: 'git://github.com/webpro/release.git' } };
+    const options = { git: { pushRepo: 'git://github.com/webpro/release-git.git' } };
     const gitClient = factory(Git, { options });
-    t.is(await gitClient.getRemoteUrl(), 'git://github.com/webpro/release.git');
+    t.is(await gitClient.getRemoteUrl(), 'git://github.com/webpro/release-git.git');
   }
 });
 

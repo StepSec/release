@@ -3,7 +3,7 @@
     "after:init": ["npm run lint", "npm run knip", "npm test"]
   },
   "github": {
-    "tokenRef": "GITHUB_TOKEN_RELEASE",
+    "tokenRef": "GITHUB_TOKEN_RELEASE_GIT",
     "release": true,
     "comments": {
       "submit": true

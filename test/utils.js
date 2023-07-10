@@ -29,13 +29,13 @@ test('truncateLines', t => {
 });
 
 test('parseGitUrl', t => {
-  t.deepEqual(parseGitUrl('https://github.com/webpro/release.git'), {
+  t.deepEqual(parseGitUrl('https://github.com/webpro/release-git.git'), {
     host: 'github.com',
     owner: 'webpro',
-    project: 'release',
+    project: 'release-git',
     protocol: 'https',
-    remote: 'https://github.com/webpro/release.git',
-    repository: 'webpro/release'
+    remote: 'https://github.com/webpro/release-git.git',
+    repository: 'webpro/release-git'
   });
 
   t.deepEqual(parseGitUrl('git@gitlab.com:org/sub-group/repo-in-sub-group.git'), {

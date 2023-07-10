@@ -6,7 +6,7 @@ import { readJSON } from '../lib/util.js';
 import { factory } from './util/index.js';
 import { mkTmpDir, gitAdd } from './util/helpers.js';
 
-const { git } = readJSON(new URL('../config/release.json', import.meta.url));
+const { git } = readJSON(new URL('../config/release-git.json', import.meta.url));
 
 test.serial.beforeEach(t => {
   const bare = mkTmpDir();

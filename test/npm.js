@@ -125,12 +125,12 @@ test('should add registry to commands when specified', async t => {
   const exec = sinon.stub(npmClient.shell, 'exec').resolves();
   exec.withArgs('npm whoami --registry registry.example.org').resolves('john');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release --registry registry.example.org/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git --registry registry.example.org/)
     .resolves(JSON.stringify({ john: ['write'] }));
   await runTasks(npmClient);
   t.is(exec.args[0][0], 'npm ping --registry registry.example.org');
   t.is(exec.args[1][0], 'npm whoami --registry registry.example.org');
-  t.regex(exec.args[2][0], /npm show release@[a-z]+ version --registry registry\.example\.org/);
+  t.regex(exec.args[2][0], /npm show release-git@[a-z]+ version --registry registry\.example\.org/);
   exec.restore();
 });
 
@@ -139,7 +139,7 @@ test('should not throw when executing tasks', async t => {
   const exec = sinon.stub(npmClient.shell, 'exec').resolves();
   exec.withArgs('npm whoami').resolves('john');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git/)
     .resolves(JSON.stringify({ john: ['write'] }));
   await t.notThrowsAsync(runTasks(npmClient));
   exec.restore();
@@ -188,7 +188,7 @@ test('should not throw if npm returns 404 for unsupported ping', async t => {
   exec.withArgs('npm ping').rejects(new Error(pingError));
   exec.withArgs('npm whoami').resolves('john');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git/)
     .resolves(JSON.stringify({ john: ['write'] }));
   await runTasks(npmClient);
   t.is(exec.lastCall.args[0].trim(), 'npm publish . --tag latest');
@@ -208,8 +208,8 @@ test('should throw if user is not a collaborator (v9)', async t => {
   const exec = sinon.stub(npmClient.shell, 'exec').resolves();
   exec.withArgs('npm whoami').resolves('ada');
   exec.withArgs('npm --version').resolves('9.2.0');
-  exec.withArgs('npm access list collaborators --json release').resolves(JSON.stringify({ john: ['write'] }));
-  await t.throwsAsync(runTasks(npmClient), { message: /^User ada is not a collaborator for release/ });
+  exec.withArgs('npm access list collaborators --json release-git').resolves(JSON.stringify({ john: ['write'] }));
+  await t.throwsAsync(runTasks(npmClient), { message: /^User ada is not a collaborator for release-git/ });
   exec.restore();
 });
 
@@ -219,9 +219,9 @@ test('should throw if user is not a collaborator (v8)', async t => {
   exec.withArgs('npm whoami').resolves('ada');
   exec.withArgs('npm --version').resolves('8.2.0');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git/)
     .resolves(JSON.stringify({ john: ['write'] }));
-  await t.throwsAsync(runTasks(npmClient), { message: /^User ada is not a collaborator for release/ });
+  await t.throwsAsync(runTasks(npmClient), { message: /^User ada is not a collaborator for release-git/ });
   exec.restore();
 });
 
@@ -230,10 +230,10 @@ test('should not throw if user is not a collaborator on a new package', async t 
   const exec = sinon.stub(npmClient.shell, 'exec').resolves();
   exec.withArgs('npm whoami').resolves('ada');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git/)
     .rejects(
       new Error(
-        'npm ERR! code E404\nnpm ERR! 404 Not Found - GET https://registry.npmjs.org/-/package/release/collaborators?format=cli - File not found'
+        'npm ERR! code E404\nnpm ERR! 404 Not Found - GET https://registry.npmjs.org/-/package/release-git/collaborators?format=cli - File not found'
       )
     );
   await t.notThrowsAsync(runTasks(npmClient));
@@ -292,7 +292,7 @@ test('should publish', async t => {
   const exec = sinon.stub(npmClient.shell, 'exec').resolves();
   exec.withArgs('npm whoami').resolves('john');
   exec
-    .withArgs(/npm access (list collaborators --json|ls-collaborators) release/)
+    .withArgs(/npm access (list collaborators --json|ls-collaborators) release-git/)
     .resolves(JSON.stringify({ john: ['write'] }));
   await runTasks(npmClient);
   t.is(exec.lastCall.args[0].trim(), 'npm publish . --tag latest');

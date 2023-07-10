@@ -3,8 +3,8 @@ import isCI from 'is-ci';
 import Config from '../lib/config.js';
 import { readJSON } from '../lib/util.js';
 
-const defaultConfig = readJSON(new URL('../config/release.json', import.meta.url));
-const projectConfig = readJSON(new URL('../.release.json', import.meta.url));
+const defaultConfig = readJSON(new URL('../config/release-git.json', import.meta.url));
+const projectConfig = readJSON(new URL('../.release-git.json', import.meta.url));
 
 const localConfig = { github: { release: true } };
 
