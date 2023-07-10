@@ -200,6 +200,13 @@
   resolved "https://registry.yarnpkg.com/@octokit/plugin-request-log/-/plugin-request-log-1.0.4.tgz#5e50ed7083a613816b1e4a28aeec5fb7f1462e85"
   integrity sha512-mLUsMkgP7K/cnFEw07kWqXGF5LKrOkD+lhCrKvPHXWDywAwuDUeDwWBpc69XK3pNX0uKiVt8g5z96PJ6z9xCFA==
 
+"@octokit/plugin-rest-endpoint-methods@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-8.0.0.tgz#8e5ecd5a227b95caf664a0203023217a1cbc992f"
+  integrity sha512-GtA8B7zkdxJv2OBVUtUeynu/OkWo272w2IpWC+QCQiUhgrRZ9Zrz2NgAiqYkVhlITGD3PcWYEjy9JR1HrzYtQA==
+  dependencies:
+    "@octokit/types" "^10.0.0"
+
 "@octokit/plugin-rest-endpoint-methods@^7.1.2":
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-7.2.3.tgz#37a84b171a6cb6658816c82c4082ac3512021797"
