@@ -372,7 +372,7 @@ environments running Node.js v14. Also see [CHANGELOG.md][67].
 [23]: ./docs/npm.md
 [24]: https://github.com/release-git/bumper
 [25]: https://github.com/release-git/conventional-changelog
-[26]: https://github.com/casmith/release-git-calver-plugin
+[26]: https://github.com/casmith/release-it-calver-plugin
 [27]: ./docs/git.md
 [28]: https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
 [29]: ./docs/github-releases.md
