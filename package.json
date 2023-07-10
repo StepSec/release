@@ -1,5 +1,5 @@
 {
-  "name": "release",
+  "name": "release-git",
   "version": "16.1.0",
   "description": "Generic CLI tool to automate versioning and package publishing-related tasks.",
   "keywords": [
@@ -28,12 +28,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/StepSec/release.git"
+    "url": "https://github.com/release-git/release-git.git"
   },
-  "homepage": "https://github.com/StepSec/release#readme",
-  "bugs": "https://github.com/StepSec/release/issues",
+  "homepage": "https://github.com/release-git/release-git#readme",
+  "bugs": "https://github.com/release-git/release-git/issues",
   "bin": {
-    "release": "bin/release.js"
+    "release": "bin/release-git.js"
   },
   "type": "module",
   "exports": {
@@ -53,7 +53,7 @@
     "format": "prettier --write \"{lib,test}/**/*.js\"",
     "docs": "remark README.md 'docs/**/*.md' '.github/*.md' -o",
     "test": "ava --no-worker-threads",
-    "release": "./bin/release.js"
+    "release": "./bin/release-git.js"
   },
   "author": {
     "email": "infosulaimanbd@gmil.com",
