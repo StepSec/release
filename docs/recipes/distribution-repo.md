@@ -65,5 +65,5 @@ A single repository, with e.g. a `dist` or `gh-pages` branch. In `package.json`:
 
 [1]: https://github.com/components
 [2]: https://github.com/angular/bower-angular
-[3]: https://github.com/release-git/release-git/releases/tag/9.8.0
+
 [4]: https://docs.npmjs.com/cli/version.html

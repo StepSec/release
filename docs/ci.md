@@ -200,5 +200,4 @@ Specifically, make sure to `fetch` with the `--prune-tags` argument before relea
 [13]: https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow
 [14]: https://circleci.com/blog/publishing-npm-packages-using-circleci-2-0/
 [15]: https://github.com/release-git/release-git#github-releases
-[16]: https://github.com/release-git/release-git#gitlab-releases
-[17]: https://github.com/release-git/release-git/issues/573
+[16]: https://github.com/release-git/

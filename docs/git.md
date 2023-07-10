@@ -200,5 +200,4 @@ script.
 [7]: #use-all-refs-to-determine-latest-tag
 [8]: https://git-scm.com/docs/git-describe
 [9]: assets/git-version-from-all-refs.svg
-[10]: https://github.com/release-git/release-git/issues/350
-[11]: ./recipes/require-commits.md
+[10]: ./recipes/require-commits.md
