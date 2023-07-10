@@ -297,7 +297,7 @@ Since v11, release-git can be extended in many, many ways. Here are some plugins
 | [@release-git-plugins/workspaces][40]      | Releases each of your projects configured workspaces                          |
 | [release-git-calver-plugin][26]            | Enables Calendar Versioning (calver) with release-git                         |
 | [@grupoboticario/news-fragments][41]       | An easy way to generate your changelog file                                   |
-| [@j-ulrich/release-git-regex-bumper][42]   | Regular expression based version read/write plugin for release-git            |
+| [@j-ulrich/release-it-regex-bumper][42]   | Regular expression based version read/write plugin for release-git            |
 
 Internally, release-git uses its own plugin architecture (for Git, GitHub, GitLab, npm).
 
@@ -388,7 +388,7 @@ environments running Node.js v14. Also see [CHANGELOG.md][67].
 [39]: https://github.com/release-git-plugins/lerna-changelog
 [40]: https://github.com/release-git-plugins/workspaces
 [41]: https://github.com/grupoboticario/news-fragments
-[42]: https://github.com/j-ulrich/release-git-regex-bumper
+[42]: https://github.com/j-ulrich/release-it-regex-bumper
 [43]: https://www.npmjs.com/search?q=keywords:release-git-plugin
 [44]: ./docs/plugins.md
 [45]: ./docs/recipes/programmatic.md
